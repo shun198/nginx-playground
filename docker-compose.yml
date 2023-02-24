@@ -3,20 +3,32 @@ version: "3.9"
 services:
   app_01:
     container_name: app_01
+    build:
+      context: .
+      dockerfile: containers/node/Dockerfile
     expose:
       - "8080"
 
   app_02:
     container_name: app_02
+    build:
+      context: .
+      dockerfile: containers/node/Dockerfile
     expose:
       - "8080"
 
   web_01:
     container_name: web_01
+    build:
+      context: .
+      dockerfile: containers/nginx/Dockerfile
     ports:
     - "80:80"
 
   web_02:
     container_name: web_02
+    build:
+      context: .
+      dockerfile: containers/nginx/Dockerfile
     ports:
-    - "81:81"
+    - "81:80"
