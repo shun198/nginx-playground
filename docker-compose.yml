@@ -1,11 +1,22 @@
 version: "3.9"
 
 services:
-  app:
-    container_name: app
+  app_01:
+    container_name: app_01
     expose:
       - "8080"
+
+  app_02:
+    container_name: app_02
+    expose:
+      - "8080"
+
   web_01:
     container_name: web_01
     ports:
     - "80:80"
+
+  web_02:
+    container_name: web_02
+    ports:
+    - "81:81"
